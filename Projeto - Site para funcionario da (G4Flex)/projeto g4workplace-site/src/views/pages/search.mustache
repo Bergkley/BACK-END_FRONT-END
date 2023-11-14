@@ -1,0 +1,57 @@
+{{>partials/header}}
+
+<section class="banner" style="background-image: url('images/procura.png')"></section>
+<h2>Funcionários</h2>
+
+{{#employees}}
+    <div class="container list">
+        <div class="item-container">
+                <div class="item">
+                    <a href="{{linkedin}}">
+                        <img src="fotodapessoa/{{photo}}" class="item--image" />
+                    </a>
+                    <div class="item--info">
+                        <div class="item--name">Nome: {{name}}</div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+{{/employees}}
+
+{{^employees}}
+    <div class="container no-list">
+        <h2>Não há funcionários disponíveis nestas condições</h2>
+    </div>
+{{/employees}}
+
+{{>partials/footer}}
+
+
+<!-- Incorporar código JavaScript para ordenar a lista -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const listaFuncionarios = document.querySelectorAll('.container.list');
+
+    const funcionariosArray = Array.from(listaFuncionarios);
+
+    funcionariosArray.sort(function(a, b) {
+        const nomeA = a.querySelector('.item--name').textContent.toLowerCase();
+        const nomeB = b.querySelector('.item--name').textContent.toLowerCase();
+
+        if (nomeA < nomeB) {
+            return -1;
+        } else if (nomeA > nomeB) {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+
+    const containerList = document.querySelector('.container.list');
+
+    funcionariosArray.forEach(function(funcionario) {
+        containerList.appendChild(funcionario);
+    });
+});
+</script>

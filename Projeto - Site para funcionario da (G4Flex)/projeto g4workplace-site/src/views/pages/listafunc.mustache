@@ -1,0 +1,40 @@
+{{>partials/header}}
+
+<section class="banner" style="background-image: url('images/{{background}}')"></section>
+<h2>Funcionários</h2>
+
+{{#list}}
+    <div class="container list">
+        <div class="item-container">
+                <div class="item">
+                    <a href="http://localhost:4000/perfilemployee/{{id}}">
+                        <img src="fotodapessoa/{{photo}}" class="item--image" />
+                    </a>
+                    <div class="item--info">
+                        <div class="item--name">Nome: {{name}}</div>
+                        <div class="item--sectors">
+                            {{#sectors}}
+                            <div class="item--setor">SECTORS:{{name}}</div>
+                            {{/sectors}}
+                        </div>
+                        <div class="item--subsectors">
+                            {{#subsectors}}
+                            <div class="item--setor">SUBSECTORS: {{name}}</div>
+                            {{/subsectors}}
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+{{/list}}
+
+{{^list}}
+    <div class="container no-list">
+        <h2>Não há funcionários disponíveis nestas condições</h2>
+    </div>
+{{/list}}
+
+{{>partials/footer}}
+
+
+

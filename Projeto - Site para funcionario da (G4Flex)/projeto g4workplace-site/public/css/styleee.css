@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgray;
+}
+
+.container {
+  width: 90%;
+  height: 85vh;
+  display: flex;
+  box-shadow: 5px 5px 10px gray;
+}
+
+.form-image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 1rem;
+}
+
+.form-image img {
+  width: 31rem;
+}
+
+.form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  color: white;
+  padding: 3rem;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.login-button {
+  display: flex;
+  align-items: center;
+}
+
+.login-button button {
+  border: none;
+  background-color: rgb(243, 243, 243);
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-button button:hover {
+  background-color: white;
+}
+
+.login-button button a {
+  text-decoration: none;
+  font-weight: 500;
+  color: gray;
+}
+
+.form-header h1::after {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 0.3rem;
+  background-color: white;
+  margin: 0 auto;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.input-box select {
+  flex: 1;
+  padding: 8px;
+  margin-right: 1rem;
+  border-radius: 10px;
+  align-self: flex-start;
+  width: auto; 
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.1rem;
+}
+
+.input-box input,
+.input-box select {
+  margin: 0.6rem 0;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px black;
+}
+
+.input-box input:hover,
+.input-box select:hover {
+  background-color: white;
+}
+
+.input-box input:focus-visible,
+.input-box select:focus-visible {
+  outline: 1px solid transparent;
+}
+
+.input-box label,
+.gender-title h6 {
+  font-size: 0.75rem;
+  font-weight: 575;
+  color: white;
+}
+
+.gender-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.62rem;
+  padding: 0 0.5rem;
+}
+
+.gender-input {
+  display: flex;
+  align-items: center;
+}
+
+.gender-input input {
+  margin-right: 0.35rem;
+}
+
+.gender-input label {
+  font-size: 0.81rem;
+  font-weight: 500;
+}
+
+.continue-button button {
+  width: 100%;
+  margin-top: 1.5rem;
+  border: none;
+  background-color: rgb(243, 243, 243);
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.continue-button button:hover {
+  background-color: white;
+}
+
+.continue-button button a {
+  text-decoration: none;
+  font-weight: 500;
+  color: gray;
+}
+
+@media screen and (max-width: 1330px) {
+  .form-image {
+    display: none;
+  }
+  .container {
+    width: 50%;
+  }
+  .form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1064px) {
+  .container {
+    width: 90%;
+    height: auto;
+  }
+  .input-group {
+    flex-direction: column;
+    z-index: 5;
+    padding-right: 5rem;
+    max-height: 10rem;
+    overflow-y: scroll;
+    flex-wrap: nowrap;
+  }
+  .gender-inputs {
+    margin-top: 2rem;
+  }
+  .gender-group {
+    flex-direction: column;
+  }
+  .gender-title h6 {
+    margin: 0;
+  }
+  .gender-input {
+    margin-top: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    width: 100%;
+  }
+  .form-header {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input-group {
+    padding-right: 2rem;
+  }
+
+  .continue-button button {
+    width: 100%;
+  }
+}

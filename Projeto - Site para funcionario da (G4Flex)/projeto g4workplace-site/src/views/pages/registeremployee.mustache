@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="/css/styleee.css">
+  <link rel="icon" type="image/png" href="/images/g4flex.png">
+  <title>Formulário de Cadastro</title>
+</head>
+<body>
+  <form method="POST" action="/registersucess" enctype="multipart/form-data">
+    <div class="container">
+      <div class="form-image">
+        <img src="/images/g4flex.png" alt="g4flex">
+      </div>
+      <div class="form">
+        <div class="form-header">
+          <div class="title">
+            <h1>Cadastre-se</h1>
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="input-box">
+            <label for="nome">Nome</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Digite seu nome"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <label for="sector">Setor:</label>
+            <select id="sector" name="sector">
+              <option value="Desenvolvimento">Desenvolvimento</option>
+              <option value="Infraestrutura">Infraestrutura</option>
+            </select>
+          </div>
+          <div class="input-box">
+            <label for="sectorsub">Sub-Setor</label>
+            <select id="sectorsub" name="sectorsub">
+              <optgroup label="Desenvolvimento">
+                <option value="Flex_Omichannel">Flex_Omichannel</option>
+                <option value="Flex_IA">Flex_IA</option>
+                <option value="Flex_Saleforce">Flex_Saleforce</option>
+                <option value="Flex_Mobile">Flex_Mobile</option>
+              </optgroup>
+              <optgroup label="Infraestrutura">
+                <option value="Suporte">Suporte</option>
+                <option value="Ativação">Ativação</option>
+                <option value="CSCX">CSCX</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="input-box">
+            <label for="email">E-mail:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Digite seu e-mail"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <label for="number">Celular:</label>
+            <input
+              type="tel"
+              id="number"
+              name="number"
+              placeholder="(xx) xxxx-xxxx"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <label for="password">Senha</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Digite sua senha"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <label for="confirmPassword">Confirme sua Senha</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Digite sua senha novamente"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <label for="linkedin">LinkedIn:</label>
+            <input
+              type="url"
+              id="linkedin"
+              name="linkedin"
+              placeholder="Digite seu Link do LinkedIn"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <label for="imagem">Envie sua foto (*ex: seunome.jpg*):</label>
+            <input type="file" id="imagem" name="imagem" accept="image/*">
+          </div>
+        </div>
+        <div class="continue-button">
+          <button type="submit">Criar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    const areaSelect = document.getElementById('area');
+    const Campotelefone = document.getElementById('number');
+    const desenvolvimentoSetores = document.getElementById('setorSelect').querySelector('optgroup[label="Desenvolvimento"]');
+    const infraestruturaSetores = document.getElementById('setorSelect').querySelector('optgroup[label="Infraestrutura"]');
+
+    Campotelefone.addEventListener('input',MascaraTelefone)
+    function MascaraTelefone(e){
+
+    var Tecla = e.keyCode;
+
+    if(Tecla == 8){
+      return false;
+    }
+
+    var Telefone = Campotelefone.value;
+
+    if(Telefone.length == 1){
+      Campotelefone.value = "(" + Telefone;
+      return true;
+    }
+
+    if(Telefone.length == 3){
+      Campotelefone.value =  Telefone + ")";
+      return true;
+    }
+
+    if(Telefone.length == 9){
+      Campotelefone.value =  Telefone + "-";
+      return true;
+    }
+
+
+  }
+    
+
+
+    areaSelect.addEventListener('change', function () {
+      if (areaSelect.value === 'Desenvolvimento') {
+        desenvolvimentoSetores.style.display = 'block';
+        infraestruturaSetores.style.display = 'none';
+      } else if (areaSelect.value === 'Infraestrutura') {
+        desenvolvimentoSetores.style.display = 'none';
+        infraestruturaSetores.style.display = 'block';
+      } else {
+        desenvolvimentoSetores.style.display = 'none';
+        infraestruturaSetores.style.display = 'none';
+      }
+    });
+
+    // Inicialmente, oculte ambos os conjuntos de setores
+    desenvolvimentoSetores.style.display = 'none';
+    infraestruturaSetores.style.display = 'none';
+  </script>
+</body>
+</html>

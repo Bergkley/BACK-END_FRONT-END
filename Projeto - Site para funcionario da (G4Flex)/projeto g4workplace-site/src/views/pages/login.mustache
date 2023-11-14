@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stylee.css" />
+    <link rel="icon" type="/images/g4flex.png" href="/images/g4flex.png" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>Login</title>
+    <script>
+        function onSubmit(event) {
+            event.preventDefault();
+            const recaptchaResponse = grecaptcha.getResponse();
+
+            if (!recaptchaResponse || recaptchaResponse.length === 0) {
+                alert('Por favor, complete a verificação reCAPTCHA antes de enviar o formulário.');
+            } else {
+                // Se o reCAPTCHA foi resolvido, você pode continuar com o envio do formulário
+                document.querySelector('form').submit();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="main-login">
+        <div class="left-login">
+            <h1>Bem-Vindo ao WebSite dos funcionarios da G4FLEX 
+            <img src="/images/g4flex.png" alt=" flex" class="image-login">
+        </div>
+        <div class="rigth-login">
+            <div class="card-login">
+                <h1>LOGIN</h1>
+                <form method="POST" action="/loginsucess" onsubmit="onSubmit(event)">
+                    <div class="textfield">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" placeholder="email"> 
+                    </div>
+                    <div class="textfield">
+                        <label for="password">Senha:</label>
+                        <input type="password" name="password" placeholder="Senha">
+                        <a href="/forgot_password">Esqueceu a senha</a>
+                    </div>
+                    <div>
+                        <div class="g-recaptcha" data-sitekey="6Lc8bSooAAAAAJHAxVDuZ66y2nK9dG3u29rEnKJ1"></div>
+                    </div>
+                    <button class="btn-login">Login</button>
+                    <a href="/register">Criar uma conta</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

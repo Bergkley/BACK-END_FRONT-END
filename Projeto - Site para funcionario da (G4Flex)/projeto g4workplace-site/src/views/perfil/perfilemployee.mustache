@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>G4Flex Business & Services</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/styleeee.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+<div class="header">
+    <h1>Perfil</h1>
+    {{#user}}
+        <img src="/fotodapessoa/{{photo}}" alt="Foto do Usuário" class="user-avatar">
+    {{/user}}
+</div>
+
+<div class="about">
+    <h1>Sobre mim</h1>
+    {{#user}}
+        <p>{{description}}</p>
+    {{/user}}
+</div>
+
+<div class="detalhes">
+    <h1> Detalhes</h1>
+    {{#user}}
+        <span class="negrito"><i class="fas fa-user"></i> Nome:</span> <p>{{name}}</p>
+        <span class="negrito"><i class="fas fa-envelope"></i> Email:</span> <p>{{email}}</p>
+        <span class="negrito"><i class="fab fa-linkedin"></i> Linkedin:</span> <p><a href="{{linkedin}}">LINKEDIN</p> </a>
+
+        <span class="negrito"><i class="fas fa-graduation-cap"></i> Qualificação:</span> 
+        {{#qualifications}}
+            {{qualification}}
+        {{/qualifications}}
+        
+    {{/user}}
+</div>
+
+<div class="footer">
+    <a href="URL_DO_SEU_INSTAGRAM" target="_blank"><i class="fab fa-instagram ico"></i></a>
+    <a href="URL_DO_SEU_TWITTER" target="_blank"><i class="fab fa-twitter ico"></i></a>
+    <a href="URL_DO_SEU_FACEBOOK" target="_blank"><i class="fab fa-facebook ico"></i></a>
+</div>
+</body>
+</html>

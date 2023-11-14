@@ -1,0 +1,34 @@
+{{>partials/header}}
+
+{{#banner}}
+    <section class="banner" style="background-image: url('images/{{background}}')">{{title}}</section>
+<nav>
+    <ul>
+        <li class="{{#menu.all}}active{{/menu.all}}"><a href="/">Todos</a></li>
+        <li class="{{#menu.dog}}active{{/menu.dog}}"><a href="/dogs">Cachorros</a></li>
+        <li class="{{#menu.cat}}active{{/menu.cat}}"><a href="/cats">Gatos</a></li>
+        <li class="{{#menu.fish}}active{{/menu.fish}}"><a href="/fishes">Peixes</a></li>
+    </ul>
+</nav>  
+    <h2>{{title}} disponíveis para adoção</h2>
+
+
+{{/banner}}
+<div class="container list">
+    {{#list}}
+        <div class="item">
+        <a href="/cats"><img src="images/{{image}}" class="item--image" /></a>
+        <div class="item--name">{{name}}</div>
+        <div class="item--color">Cor: {{color}}</div>
+        <div class="item--genre">Gênero: {{sex}}</div>
+    </div>
+    {{/list}}
+</div>
+
+{{^list}}
+<div class="container no-list">
+    <h2>Não há animais disponíveis nestas condições</h2>
+</div>
+{{/list}}
+
+{{>partials/footer}}

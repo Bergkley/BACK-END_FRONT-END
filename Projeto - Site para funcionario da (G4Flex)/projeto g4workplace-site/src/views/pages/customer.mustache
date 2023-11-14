@@ -1,0 +1,24 @@
+{{>partials/header}}
+
+<section class="banner" style="background-image: url('images/{{background}}')"></section>
+<h2>Setores:</h2>
+{{#list}}
+    <div class="container list">
+            <div class="item">
+                <a href="{{site}}">
+                    <img src="/clientes/{{photo}}" class="item--image" />
+                </a>
+                <div class="item--name">Empresa: {{name}}</div>
+            </div>
+
+    </div>
+{{/list}}
+
+{{^list}}
+    <div class="container no-list">
+        <h2>Não há funcionários disponíveis nestas condições</h2>
+    </div>
+{{/list}}
+
+{{>partials/footer}}
+

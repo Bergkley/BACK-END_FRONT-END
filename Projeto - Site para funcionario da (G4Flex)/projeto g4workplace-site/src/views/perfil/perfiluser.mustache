@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>G4Flex Business & Services</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/styleeee.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+<div class="header">
+    <h1>Perfil</h1>
+    {{#user}}
+        <form id="profile-form" action="/perfilpost/{{id}}" method="POST" enctype="multipart/form-data">
+            <label for="file-input">
+                <img src="/fotodapessoa/{{photo}}" class="avatar" />
+                <div class="edit-icon"><i class="fas fa-edit"></i></div>
+            </label>
+            <input id="file-input" type="file" style="display: none;" accept="image/*" name="imagem">
+            <button type="submit">Enviar Foto</button>
+        </form>
+
+    {{/user}}
+</div>
+
+<div class="about" style="background-image: url('caminho/para/sua/logo.png');">
+</div>
+
+<div class="detalhes">
+    <h1> Informações Do Usuário</h1>
+    {{#user}}
+        <span class="negrito"><i class="fas fa-user"></i> Nome:</span> <p>{{name}}</p>
+        <span class="negrito"><i class="fas fa-envelope"></i> Email:</span> <p>{{email}}</p>
+        <span class="negrito"><i class="fas fa-key"></i> Alterar Senha:</span> <p><a href="http://localhost:4000/alter_password">Clique aqui para alterar a senha</a></p>
+        <span class="negrito"><i class="fas fa-sign-out-alt"></i> Sair da Conta:</span> <p><a href="http://localhost:4000/logout">Clique aqui para sair da conta</a></p>
+    {{/user}}
+</div>
+
+<div class="footer">
+    <a href="URL_DO_SEU_INSTAGRAM" target="_blank"><i class="fab fa-instagram ico"></i></a>
+    <a href="URL_DO_SEU_TWITTER" target="_blank"><i class="fab fa-twitter ico"></i></a>
+    <a href="URL_DO_SEU_FACEBOOK" target="_blank"><i class="fab fa-facebook ico"></i></a>
+</div>
+
+<script>
+    const fileInput = document.getElementById('file-input');
+    const uploadButton = document.getElementById('upload-button');
+    const uploadForm = document.getElementById('upload-form');
+
+    uploadButton.addEventListener('click', () => {
+        fileInput.click();
+    });
+
+    fileInput.addEventListener('change', () => {
+        uploadForm.style.display = 'block';
+    });
+</script>
+</body>
+</html>

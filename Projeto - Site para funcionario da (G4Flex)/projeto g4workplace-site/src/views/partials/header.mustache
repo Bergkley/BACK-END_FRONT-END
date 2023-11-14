@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G4Flex Business & Services</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" type="image/png" href="/images/g4flex.png">
+</head>
+<body>
+<header>
+    <div class="container">
+        <a href="/paginainicial">G4flex</a>
+        
+        <form method="GET" action="/search">
+            <input type="search" name="q" placeholder="Pesquise por Funcionario" value="{{query}}" />
+        </form>
+        
+        <div class="user-info">
+            {{#usertokenid}}
+                <a href="/perfil/{{usertokenid}}" id="profile-link">
+            {{/usertokenid}}
+            {{#usertokenphoto}}
+                    <img src="fotodapessoa/{{usertokenphoto}}" alt="Foto do Usuário" class="user-avatar">
+            {{/usertokenphoto}}
+
+                {{#usertokenname}}
+                    <span id="user-name">{{usertokenname}}</span>
+                {{/usertokenname}}
+            </a>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li class="{{#menu.Funcionarios}}active{{/menu.Funcionarios}}"><a href="/home">Funcionarios</a></li>
+        <li class="{{#menu.Setor}}active{{/menu.Setor}}"><a href="/sector">Setores</a></li>
+        <li class="{{#menu.Clientes}}active{{/menu.Clientes}}"><a href="/customer">Clientes</a></li>
+        <li class="{{#menu.Contato}}active{{/menu.Contato}}"><a href="/contact">Contato</a></li>
+    </ul>
+</nav>
