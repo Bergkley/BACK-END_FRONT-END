@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="/images/dominio.png" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Encurtador</title>
+    <link rel='stylesheet' href='stylesheets/style.css' />
+  </head>
+  <body>
+    <div>
+      <div class="header">
+        <img src="/images/globo.png" alt="Encurtador" class="icon">
+        <h1>
+            Encurtador
+        </h1>
+        <p>Estatística de acesso</p>
+      </div>
+      <div class="stats">
+       <p>
+        <div class="alert alert-success" role="alert">
+          Seu link encurtado  <a href="<%= process.env.DOMAIN %><%= code %>" class="alert-link"><%= process.env.DOMAIN %><%= code %></a>. 
+        </div>
+                
+       </p>
+       <p>
+            Redireciona para: <br />
+            <%= url %>
+       </p>
+       <div class="statsRow">
+        <div class="statsBox" >
+            <b>
+                <%= hits %>
+            </b>
+            <p>Visitas</p>
+        </div>
+        <div class="statsBox">
+            <b>
+                <%= updatedAt %>
+            </b>
+            <p>
+                Última Visita
+            </p>
+        </div>
+       </div>
+       <a href="/" class="btn btn-primary">Encurtar nova Url</a>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  </body>
+</html>
