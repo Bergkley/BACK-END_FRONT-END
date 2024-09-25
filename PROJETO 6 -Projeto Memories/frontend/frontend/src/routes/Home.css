@@ -1,0 +1,65 @@
+.home h2 {
+    color: #1146a6;
+    padding: 2rem 0 1rem;
+    text-align: center;
+  }
+  
+  .memories-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  
+  .memory {
+    flex: 1 1 300px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  
+  .memory img {
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .image-container {
+    position: relative;
+  }
+  
+  .favorite-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: gold;
+    transition: 0.4s;
+  }
+  
+  .favorite-btn:hover {
+    color: orange;
+  }
+  
+  .delete-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(153, 41, 6);
+    transition: 0.4s;
+  }
+  
+  .delete-btn:hover {
+    color: red;
+  }
+  
+  

@@ -1,0 +1,85 @@
+POST http://localhost:3000/api/services
+Content-Type: application/json
+
+{
+    "name": "Decoração",
+    "description": "Escolha a decoração para sua festa, e nós a montamos.",
+    "price": 1400,
+    "image": "https://images.unsplash.com/photo-1478146059778-26028b07395a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=892&q=80"
+  }
+
+
+###
+GET http://localhost:3000/api/services
+
+###
+GET http://localhost:3000/api/services/66e60f5fe7a163856e6f8857
+
+###
+DELETE  http://localhost:3000/api/services/66e61dde9a8b15d66881a95d
+
+###
+PUT http://localhost:3000/api/services/66e60f5fe7a163856e6f8857
+Content-Type: application/json
+
+{
+    "name": "Teste atualizar 4",
+    "description": "Escolha a decoração para sua festa, e nós a montamos.",
+    "price": 1400,
+    "image": "https://images.unsplash.com/photo-1478146059778-26028b07395a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=892&q=80"
+}
+
+###
+###
+POST http://localhost:3000/api/parties
+Content-Type: application/json
+
+{
+    "title": "Meu evento",
+    "author": "Bergkley",
+    "description": "Uma festa de aniversário",
+    "budget": 9000,
+    "image": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "services": [{
+        "_id": "63937a6929b37d5f01064c19",
+        "name": "Serviço 3",
+        "description": "Muito bom",
+        "price": 500.90
+    },
+    {
+        "_id": "63937a6929b37d5f01064c21",
+        "name": "Serviço 4",
+        "description": "TEste",
+        "price": 129.90
+    }]
+}
+
+###
+GET http://localhost:3000/api/parties
+###
+GET http://localhost:3000/api/parties/66e622e53fea0c7e52208fde
+###
+DELETE  http://localhost:3000/api/parties/66e625f7f6901bc603bb67ba
+###
+PUT  http://localhost:3000/api/parties/66e622e53fea0c7e52208fdf
+Content-Type: application/json
+
+{
+    "title": "Meu evento Atualizado",
+    "author": "Bergkley",
+    "description": "Uma festa de aniversário",
+    "budget": 9000,
+    "image": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "services": [{
+        "_id": "63937a6929b37d5f01064c19",
+        "name": "Serviço 3",
+        "description": "Muito bom",
+        "price": 500.90
+    },
+    {
+        "_id": "63937a6929b37d5f01064c21",
+        "name": "Serviço 4",
+        "description": "TEste",
+        "price": 129.90
+    }]
+}
