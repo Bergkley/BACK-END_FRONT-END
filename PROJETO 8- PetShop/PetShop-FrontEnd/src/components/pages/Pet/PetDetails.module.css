@@ -1,0 +1,69 @@
+.pet_details_container {
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 2em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px; 
+  margin: 0 auto;
+}
+
+.pet_details_container h2 {
+  font-size: 1.8em; 
+  margin-bottom: 1.5em; 
+  color: #333; 
+}
+
+.pet_images {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5em; 
+  
+}
+
+.pet_images img {
+  max-height: 200px;
+  margin-right: 2em;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pet_details_container p {
+  margin-bottom: 1.2em; 
+  color: #555;
+  font-size: 1.1em; 
+}
+
+.bold {
+  font-weight: bold;
+  color: #333;
+}
+
+.schedule_button {
+  border-radius: 8px;
+  background-color: #25b456;
+  color: #fff;
+  border: none;
+  max-width: 200px;
+  min-height: 2.5rem;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 1.5em; 
+}
+
+.schedule_button:hover {
+  background-color: #1c8a42;
+  transform: translateY(-2px);
+}
+
+.schedule_button:active {
+  transform: translateY(0);
+}

@@ -1,0 +1,91 @@
+.container {
+    padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5em;
+    color: #16479d;
+}
+
+.cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(33% - 2em);
+    min-width: 250px;
+    transition: transform 0.3s;
+    padding: 1.5em;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.petName {
+    font-size: 1.8rem;
+    margin: 1em 0;
+    color: #333;
+}
+
+.contacts {
+    margin: 1em 0;
+}
+
+.contacts p {
+    margin: 0.5em 0;
+    color: #666;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.actions button {
+    border: none;
+    background-color: #25b456;
+    color: #fff;
+    padding: 0.7em 1.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+.actions button:hover {
+    background-color: #16479d;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.adopted_text_conclude {
+    font-weight: bold;
+    color: #25b456;
+    padding: 15px;
+    background-color: #f1f8f3;
+    border-radius: 8px;
+}
+
+.adopted_text_process {
+    font-weight: bold;
+    color: #168b9b;
+    padding: 15px;
+    background-color: #f1f8f3;
+    border-radius: 8px;
+}

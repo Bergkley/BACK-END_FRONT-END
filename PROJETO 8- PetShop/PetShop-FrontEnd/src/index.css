@@ -1,0 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Helvetica;
+}
+
+h1 {
+  color: #16479d;
+  font-size: 2.1em;
+  margin-bottom: 1em;
+}
+
+.bold {
+  font-weight: bold;
+  color: #16479d;
+}
